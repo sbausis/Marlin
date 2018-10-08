@@ -146,3 +146,5 @@ CMakeListsPrivate.txt
 
 #CLion
 cmake-build-*
+
+Marlin.ino.with_bootloader.mega.hex
