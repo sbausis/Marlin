@@ -60,11 +60,11 @@
 #else
   #define SERVO0_PIN       11
 #endif
-#define SERVO1_PIN          6
-#define SERVO2_PIN          5
-#ifndef SERVO3_PIN
-  #define SERVO3_PIN        4
-#endif
+//#define SERVO1_PIN          6
+//#define SERVO2_PIN          5
+//#ifndef SERVO3_PIN
+//  #define SERVO3_PIN        4
+//#endif
 
 //
 // Limit Switches
@@ -274,7 +274,7 @@
 #define LED_PIN            13
 
 #ifndef FILWIDTH_PIN
-  #define FILWIDTH_PIN      5   // Analog Input on AUX2
+  #define FILWIDTH_PIN      -1   // Analog Input on AUX2
 #endif
 
 // define digital pin 4 for the filament runout sensor. Use the RAMPS 1.4 digital input 4 on the servos connector
@@ -287,12 +287,13 @@
 #endif
 
 #if ENABLED(CASE_LIGHT_ENABLE) && !defined(CASE_LIGHT_PIN) && !defined(SPINDLE_LASER_ENABLE_PIN)
-  #if NUM_SERVOS <= 1 // try to use servo connector first
-    #define CASE_LIGHT_PIN    6   // MUST BE HARDWARE PWM
-  #elif !(ENABLED(ULTRA_LCD) && ENABLED(NEWPANEL) \
-      && (ENABLED(PANEL_ONE) || ENABLED(VIKI2) || ENABLED(miniVIKI) || ENABLED(MINIPANEL) || ENABLED(REPRAPWORLD_KEYPAD)))  // try to use AUX 2
-    #define CASE_LIGHT_PIN   44   // MUST BE HARDWARE PWM
-  #endif
+  #define CASE_LIGHT_PIN    6   // MUST BE HARDWARE PWM
+  //#if NUM_SERVOS <= 1 // try to use servo connector first
+  //  #define CASE_LIGHT_PIN    6   // MUST BE HARDWARE PWM
+  //#elif !(ENABLED(ULTRA_LCD) && ENABLED(NEWPANEL) \
+  //    && (ENABLED(PANEL_ONE) || ENABLED(VIKI2) || ENABLED(miniVIKI) || ENABLED(MINIPANEL) || ENABLED(REPRAPWORLD_KEYPAD)))  // try to use AUX 2
+  //  #define CASE_LIGHT_PIN   44   // MUST BE HARDWARE PWM
+  //#endif
 #endif
 
 //
