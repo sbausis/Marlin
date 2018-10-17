@@ -77,7 +77,7 @@ void LEDLights::set_color(const LEDColor &incol
 
     pixels.setBrightness(incol.i);
     if (!isSequence)
-      set_neopixel_color(neocolor);
+      set_neopixel_color(pixels, neocolor);
     else {
       pixels.setPixelColor(nextLed, neocolor);
       pixels.show();
@@ -129,7 +129,7 @@ void LEDLights::set_white() {
     set_color(LEDColorWhite());
   #endif
   #if ENABLED(NEOPIXEL_LED)
-    set_neopixel_color(pixels.Color(NEO_WHITE));
+    set_neopixel_color(pixels, pixels.Color(NEO_WHITE));
   #endif
 }
 

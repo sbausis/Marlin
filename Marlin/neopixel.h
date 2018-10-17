@@ -39,6 +39,7 @@
 #include <stdint.h>
 
 void setup_neopixel();
-void set_neopixel_color(const uint32_t color);
+void set_neopixel_color(Adafruit_NeoPixel bus, const uint32_t color);
 
 extern Adafruit_NeoPixel pixels;
+extern Adafruit_NeoPixel pixels_case;
