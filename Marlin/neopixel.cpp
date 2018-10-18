@@ -49,13 +49,13 @@ void setup_neopixel() {
   pixels.show(); // initialize to all off
 
   #if ENABLED(NEOPIXEL_STARTUP_TEST)
-    safe_delay(1000);
+    safe_delay(200);
     set_neopixel_color(pixels.Color(255, 0, 0, 0));  // red
-    safe_delay(1000);
+    safe_delay(200);
     set_neopixel_color(pixels.Color(0, 255, 0, 0));  // green
-    safe_delay(1000);
+    safe_delay(200);
     set_neopixel_color(pixels.Color(0, 0, 255, 0));  // blue
-    safe_delay(1000);
+    safe_delay(200);
   #endif
   set_neopixel_color(pixels.Color(NEO_WHITE));       // white
 }

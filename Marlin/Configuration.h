@@ -581,7 +581,7 @@
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
-//#define ENDSTOP_INTERRUPTS_FEATURE
+#define ENDSTOP_INTERRUPTS_FEATURE
 
 /**
  * Endstop Noise Filter
@@ -625,7 +625,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.21, 80.28, 1600, 451.21 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.21, 80.28, 1600, 911.54 }
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160.42, 160.56, 1600, 451.21 }
 
 /**
@@ -663,8 +663,8 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                  5.0
-#define DEFAULT_YJERK                  4.0
+#define DEFAULT_XJERK                  4.0
+#define DEFAULT_YJERK                  3.0
 #define DEFAULT_ZJERK                  0.2
 #define DEFAULT_EJERK                  2.0
 
@@ -1904,7 +1904,7 @@
   #define NEOPIXEL_PIXELS 5       // Number of LEDs in the strip
   #define NEOPIXEL_IS_SEQUENTIAL   // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
   #define NEOPIXEL_BRIGHTNESS 65  // Initial brightness (0-255)
-  #define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
+  //#define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
 #endif
 
 /**
