@@ -124,7 +124,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 250000
+#define BAUDRATE 115200
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -581,7 +581,7 @@
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
-#define ENDSTOP_INTERRUPTS_FEATURE
+//#define ENDSTOP_INTERRUPTS_FEATURE
 
 /**
  * Endstop Noise Filter
@@ -625,7 +625,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.21, 80.28, 1600, 911.54 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.21, 80.28, 400, 446.93 }
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160.42, 160.56, 1600, 451.21 }
 
 /**
@@ -873,7 +873,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -993,8 +993,8 @@
  *   leveling in steps so you can manually adjust the Z height at each grid-point.
  *   With an LCD controller the process is guided step-by-step.
  */
-//#define AUTO_BED_LEVELING_3POINT
-#define AUTO_BED_LEVELING_LINEAR
+#define AUTO_BED_LEVELING_3POINT
+//#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
@@ -1107,12 +1107,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X 145
-  #define PROBE_PT_1_Y 290
-  #define PROBE_PT_2_X 10
-  #define PROBE_PT_2_Y 81
-  #define PROBE_PT_3_X 240
-  #define PROBE_PT_3_Y 81
+  #define PROBE_PT_1_X 40
+  #define PROBE_PT_1_Y 81
+  #define PROBE_PT_2_X 275
+  #define PROBE_PT_2_Y 130
+  #define PROBE_PT_3_X 130
+  #define PROBE_PT_3_Y 285
 #endif
 
 /**

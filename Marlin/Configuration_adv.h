@@ -1109,7 +1109,7 @@
   #define Y_MICROSTEPS        16
 
   #define Z_CURRENT          800
-  #define Z_MICROSTEPS        64
+  #define Z_MICROSTEPS        16
 
   #define X2_CURRENT         800
   #define X2_MICROSTEPS       16
@@ -1118,7 +1118,7 @@
   #define Y2_MICROSTEPS       16
 
   #define Z2_CURRENT         800
-  #define Z2_MICROSTEPS       64
+  #define Z2_MICROSTEPS       16
 
   #define E0_CURRENT         750
   #define E0_MICROSTEPS       16
@@ -1205,8 +1205,8 @@
   #define SENSORLESS_HOMING // TMC2130 only
 
   #if ENABLED(SENSORLESS_HOMING)
-    #define X_HOMING_SENSITIVITY  16
-    #define Y_HOMING_SENSITIVITY  8
+    #define X_HOMING_SENSITIVITY  20
+    #define Y_HOMING_SENSITIVITY  10
     //#define Z_HOMING_SENSITIVITY  8
   #endif
 
