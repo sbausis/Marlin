@@ -814,7 +814,7 @@
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 40
+#define MIN_PROBE_EDGE 60
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
@@ -1027,9 +1027,9 @@
  *   leveling in steps so you can manually adjust the Z height at each grid-point.
  *   With an LCD controller the process is guided step-by-step.
  */
-#define AUTO_BED_LEVELING_3POINT
+//#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1074,14 +1074,14 @@
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 4
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  //#define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  //#define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - (MIN_PROBE_EDGE))
-  //#define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
-  //#define BACK_PROBE_BED_POSITION (Y_BED_SIZE - (MIN_PROBE_EDGE))
+  #define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
+  #define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - (MIN_PROBE_EDGE))
+  #define FRONT_PROBE_BED_POSITION 81
+  #define BACK_PROBE_BED_POSITION (Y_BED_SIZE - (MIN_PROBE_EDGE))
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1128,7 +1128,7 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 40          // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 81          // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -1142,11 +1142,11 @@
  */
 #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
   #define PROBE_PT_1_X 40
-  #define PROBE_PT_1_Y 81
-  #define PROBE_PT_2_X 275
-  #define PROBE_PT_2_Y 130
+  #define PROBE_PT_1_Y 110
+  #define PROBE_PT_2_X 260
+  #define PROBE_PT_2_Y 200
   #define PROBE_PT_3_X 130
-  #define PROBE_PT_3_Y 285
+  #define PROBE_PT_3_Y 280
 #endif
 
 /**
@@ -1951,9 +1951,9 @@
   #define NEOPIXEL_TYPE   NEO_GRB // NEO_GRBW / NEO_GRB - four/three channel driver type (defined in Adafruit_NeoPixel.h)
   #define NEOPIXEL_PIN    4        // LED driving pin on motherboard 4 => D4 (EXP2-5 on Printrboard) / 30 => PC7 (EXP3-13 on Rumba)
   #define NEOPIXEL_PIXELS 5       // Number of LEDs in the strip
-  #define NEOPIXEL_IS_SEQUENTIAL   // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
+  //#define NEOPIXEL_IS_SEQUENTIAL   // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
   #define NEOPIXEL_BRIGHTNESS 65  // Initial brightness (0-255)
-  //#define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
+  #define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
 #endif
 
 /**
