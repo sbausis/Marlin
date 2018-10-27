@@ -1191,10 +1191,10 @@
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
-  #define X_CURRENT          800  // rms current in mA. Multiply by 1.41 for peak current.
+  #define X_CURRENT          900  // rms current in mA. Multiply by 1.41 for peak current.
   #define X_MICROSTEPS        16  // 0..256
 
-  #define Y_CURRENT          800
+  #define Y_CURRENT          900
   #define Y_MICROSTEPS        16
 
   #define Z_CURRENT          800
@@ -1273,19 +1273,19 @@
    */
   //#define HYBRID_THRESHOLD
 
-  #define X_HYBRID_THRESHOLD     120  // [mm/s]
-  #define X2_HYBRID_THRESHOLD    120
-  #define Y_HYBRID_THRESHOLD     120
-  #define Y2_HYBRID_THRESHOLD    120
-  #define Z_HYBRID_THRESHOLD       3
-  #define Z2_HYBRID_THRESHOLD      3
-  #define Z3_HYBRID_THRESHOLD      3
-  #define E0_HYBRID_THRESHOLD     35
-  #define E1_HYBRID_THRESHOLD     35
-  #define E2_HYBRID_THRESHOLD     35
-  #define E3_HYBRID_THRESHOLD     35
-  #define E4_HYBRID_THRESHOLD     35
-  #define E5_HYBRID_THRESHOLD     35
+  #define X_HYBRID_THRESHOLD     100  // [mm/s]
+  #define X2_HYBRID_THRESHOLD    100
+  #define Y_HYBRID_THRESHOLD     100
+  #define Y2_HYBRID_THRESHOLD    100
+  #define Z_HYBRID_THRESHOLD       2
+  #define Z2_HYBRID_THRESHOLD      2
+  #define Z3_HYBRID_THRESHOLD      2
+  #define E0_HYBRID_THRESHOLD     30
+  #define E1_HYBRID_THRESHOLD     30
+  #define E2_HYBRID_THRESHOLD     30
+  #define E3_HYBRID_THRESHOLD     30
+  #define E4_HYBRID_THRESHOLD     30
+  #define E5_HYBRID_THRESHOLD     30
 
   /**
    * Use StallGuard2 to sense an obstacle and trigger an endstop.
